@@ -4,15 +4,15 @@
 
 | Color                                                              | HEX Code  | RGB Code          | Legend            |
 | :----------------------------------------------------------------- | :-------- | :---------------- | :---------------- |
-| <img src="https://placehold.co/15x15/007ACC/007ACC.png" width="15"> | `#007ACC` | `RGB(0, 122, 204)`  |                   |
-| <img src="https://placehold.co/15x15/FFA500/FFA500.png" width="15"> | `#FFA500` | `RGB(255, 165, 0)`  |                   |
+| <img src="https://placehold.co/15x15/007ACC/007ACC.png" width="15"> | `#007ACC` | `RGB(0, 122, 204)`  | Action            |
+| <img src="https://placehold.co/15x15/FFA500/FFA500.png" width="15"> | `#FFA500` | `RGB(255, 165, 0)`  | Script            |
 | <img src="https://placehold.co/15x15/D32F2F/D32F2F.png" width="15"> | `#D32F2F` | `RGB(211, 47, 47)`  | Alert             |
 | <img src="https://placehold.co/15x15/2B2B2B/2B2B2B.png" width="15"> | `#2B2B2B` | `RGB(43, 43, 43)`   | Background        |
-| <img src="https://placehold.co/15x15/555555/555555.png" width="15"> | `#555555` | `RGB(85, 85, 85)`   |                   |
+| <img src="https://placehold.co/15x15/555555/555555.png" width="15"> | `#555555` | `RGB(85, 85, 85)`   | Fumes             |
 | <img src="https://placehold.co/15x15/1E1E1E/1E1E1E.png" width="15"> | `#1E1E1E` | `RGB(30, 30, 30)`   |                   |
 | <img src="https://placehold.co/15x15/F1F1F1/F1F1F1.png" width="15"> | `#F1F1F1` | `RGB(241, 241, 241)`| Icons/Text        |
 | <img src="https://placehold.co/15x15/C0C0C0/C0C0C0.png" width="15"> | `#C0C0C0` | `RGB(192, 192, 192)`| Aire              |
-| <img src="https://placehold.co/15x15/A9A9A9/A9A9A9.png" width="15"> | `#A9A9A9` | `RGB(169, 169, 169)`| Humo (Vapor/Steam)|
+| <img src="https://placehold.co/15x15/C9A9A9/C9A9A9.png" width="15"> | `#C9A9A9` | `RGB(201, 169, 169)`| Humo (Vapor/Steam)|
 | <img src="https://placehold.co/15x15/FFEB3B/FFEB3B.png" width="15"> | `#FFEB3B` | `RGB(255, 235, 59)` | Gas               |
 | <img src="https://placehold.co/15x15/2196F3/2196F3.png" width="15"> | `#2196F3` | `RGB(33, 150, 243)` | Agua Dura         |
 | <img src="https://placehold.co/15x15/007ACC/007ACC.png" width="15"> | `#007ACC` | `RGB(0, 122, 204)`  | Agua Tratada      |
@@ -20,6 +20,10 @@
 | <img src="https://placehold.co/15x15/4E4D82/4E4D82.png" width="15"> | `#4E4D82` | `RGB(78, 77, 130)`  | Agua Caliente     |
 | <img src="https://placehold.co/15x15/4CAF50/4CAF50.png" width="15"> | `#4CAF50` | `RGB(76, 175, 80)`  | Desague           |
 | <img src="https://placehold.co/15x15/D35F2F/D35F2F.png" width="15"> | `#D35F2F` | `RGB(211, 95, 47)`  | Fuego             |
+
+#6CCF70 Condicional (108, 207, 112)
+#F92E73 Continue (249, 46, 115)
+#F92EF3 delay (249, 46, 243)
 
 
 # Nomenclature
@@ -33,11 +37,11 @@
 
 ## Variable Naming Conventions
 
-### Base Variable Names
+### State variables
 
 * `state_of`: Indicates the status or state of a component (e.g., `state_pump`).
 
-### Variable Prefixes (for Location/Type)
+### Especific Varibles what_of_where/how
 
 | Prefix | Description |
 | :----- | :---------- |
@@ -48,6 +52,8 @@
 | `Humd` | Humidity    |
 | `Sped` | Speed       |
 | `Posc` | Position    |
+
+## Constants in Mayus
 
 ---
 
@@ -115,8 +121,8 @@ Indicates the operational state of various pumps. Each bit corresponds to a spec
 
 | Bit | Description | ID    |
 | :-: | :---------- | :---- |
-| 0   | *(Reserved)*|       |
-| 1   | *(Reserved)*|       |
+| 0   | Supply-TQ1  |       |
+| 1   | TQ1-Filter  |       |
 | 2   | *(Reserved)*|       |
 | 3   | *(Reserved)*|       |
 | 4   | *(Reserved)*|       |
@@ -176,3 +182,47 @@ Indicates the operational state of various pumps. Each bit corresponds to a spec
 | 6   | *(Reserved)*|       |
 | 7   | *(Reserved)*|       |
 
+## Valvulas (`state_valves`)
+
+| Bit | Description | ID    |
+| :-: | :---------- | :---- |
+| 0   | Supply-TQ1  |       |
+| 1   | TQ1-Pump1   |       |
+| 2   | *(Reserved)*|       |
+| 3   | *(Reserved)*|       |
+| 4   | *(Reserved)*|       |
+| 5   | *(Reserved)*|       |
+| 6   | *(Reserved)*|       |
+| 7   | *(Reserved)*|       |
+
+## Power
+
+| Bit | Description | ID    |
+| :-: | :---------- | :---- |
+| 0   | Main Power  |       |
+| 1   | *(Reserved)*|       |
+| 2   | *(Reserved)*|       |
+| 3   | *(Reserved)*|       |
+| 4   | *(Reserved)*|       |
+| 5   | *(Reserved)*|       |
+| 6   | *(Reserved)*|       |
+| 7   | *(Reserved)*|       |
+
+# Windows
+
+Caldera		| C
+Tratamiento	| F
+Pre-Calent	| P
+Quemador	| Q
+Tanque		| T
+Sistema		| S
+Panel		| M
+
+# Elements
+
+## TQ1 Tanque Agua Dura
+
+TQ1_level
+TQ1_LEVEL_CAPACITY	3000L
+TQ1_level_top
+TQ1_level_bottom

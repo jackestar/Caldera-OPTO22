@@ -19,3 +19,12 @@
 .vscode
 *.idb.txt
 *.INI
+*.ini
+
+Archives
+*_BACKUP
+*Copy*
+
+*.crf
+*.inc
+*.per
