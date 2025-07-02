@@ -134,7 +134,7 @@ element_type_extra Eg. PH_Temp
 | 16  | HV009-FV003 |       |
 | 17  | FV003-HV010 |       |
 | 18  | HV010-PRHEAT|       |
-| 19  | *(Reserved)*|       |
+| 19  | BOILER-OUT  |       |
 | 20  | *(Reserved)*|       |
 | 21  | *(Reserved)*|       |
 | 22  | *(Reserved)*|       |
@@ -228,9 +228,13 @@ Bit
 | 6   | *(Reserved)*|       |
 | 7   | *(Reserved)*|       |
 
+| 29   | *(Reserved)*|       |
+| 30   | *(Reserved)*|       |
+| 31   | BoilerLevelC| true |
+
 ### `state_general_alerts`
 
-| Bit | Description | Default |
+| Bit | Description | Sensor |
 | :-: | :---------- | :---- |
 | 0   | TQ1 H 	    | LT003 |
 | 1   | TQ1 L 		  | LT002 |
@@ -240,6 +244,16 @@ Bit
 | 5   | TQ2 L       | LT006 |
 | 6   | TQ2 HH      | LT008 |
 | 7   | TQ2 LL      | LT005 |
+| 8   | BLR H       | LT203 |
+| 9   | BLR L       | LT202 |
+| 10  | BLR HH      | LT204 |
+| 11  | BLR LL      | LT201 |
+
+| 10  | TQ2 Temp    | TT001 |
+| 11  | BRN Temp    | TT201 |
+| 12  | BLR Temp    | TT202 |
+| 13  | BLR Pressur | PT201 |
+
 
 ### View `state_fails`
 
@@ -255,6 +269,7 @@ Bit
 | 7   | ZT-001      | Boiler-PreH | ZT-001 |
 | 8   | PT-005      | Boiler-PreH | PT-005 |
 | 9   | FT-004      | Boiler-PreH | FT-004 |
+
 
 
 ## Windows
@@ -296,6 +311,8 @@ Bit
 
 ### Tanque Agua Dura (TQ1)
 
+![TQ1](Images/Suministro-TQ1.svg)
+
 * TQ1_level (ind)
   * TQ1_level_p (dep)
 * TQ1_LEVEL_CAPACITY	10m3
@@ -306,9 +323,15 @@ Bit
 
 ### Tratamiento de Agua (FLT-001 [FLT])
 
+![alt text](Images/TQ1-Filtrado.svg)
+
 ### Pre Calentador (PH-001 [PH])
 
+![alt text](Images/Filtrado-Precalentado.svg)
+
 ## Caldera (BLR-001 [BLR])
+
+![Caldera](Images/Boiler.svg)
 
 ## Quemador (BRN-001 [BRN])
 
